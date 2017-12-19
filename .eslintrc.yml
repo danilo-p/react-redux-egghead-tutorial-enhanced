@@ -1,0 +1,39 @@
+env:
+  browser: true
+  node: true
+  es6: true
+extends:
+  - airbnb
+parser: babel-eslint
+parserOptions:
+  sourceType: module
+  ecmaFeatures:
+    jsx: true
+plugins:
+  - react
+settings:
+  import/resolver:
+    webpack:
+      config: "./webpack.dev.js"
+rules:
+  indent:
+    - error
+    - 2
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - always
+  "react/jsx-filename-extension":
+    - 1
+    - extensions:
+      - ".js"
+      - ".jsx"
+globals:
+  it: true
+  should: true
+  jest: true
