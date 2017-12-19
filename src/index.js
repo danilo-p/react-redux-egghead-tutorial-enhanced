@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import { createStore, combineReducers } from 'redux';
 import { Provider, connect } from 'react-redux';
 
-// Reducer composition pattern
-const todo = (state = {}, action) => { // state refers to individual todo
+// Reducers
+const todo = (state = {}, action) => {
   switch (action.type) {
   case 'ADD_TODO':
     return {
@@ -25,11 +26,14 @@ const todo = (state = {}, action) => { // state refers to individual todo
   }
 };
 
-export const todos = (state = [], action) => { // state refers to array of todos
+export const todos = (state = [], action) => {
   switch (action.type) {
-  case 'ADD_TODO': // ES6 array array concat
-    return [...state, todo(undefined, action)];
-  case 'TOGGLE_TODO': // array.map returns a new array
+  case 'ADD_TODO':
+    return [
+      ...state,
+      todo(undefined, action),
+    ];
+  case 'TOGGLE_TODO':
     return state.map(t => todo(t, action));
   case 'REMOVE_TODO':
     return [];
@@ -47,64 +51,32 @@ const visibilityFilter = (state = 'SHOW_ALL', action) => {
   }
 };
 
-/**
- * Manual implementation of todoApp + combineReducer
- */
-// const todoApp = (state={}, action) => {
-//   // first return value will be {todos: undefined, visibilityFilter: undefined}
-//   return {
-//     todos: todos(
-//       state.todos,
-//       action,
-//     ),
-//     visibilityFilter: visibilityFilter(
-//       state.visibilityFilter,
-//       action,
-//     )
-//   };
-// };
-
-/**
- * Manual implementation of combineReducer
- */
-// const combineReducers = (reducers) => {
-//   return (state={}, action) => {
-//     return Object.keys(reducers).reduce(  // use reduce function
-//       (nextState, key) => {
-//         nextState[key] = reducers[key](
-//           state[key],
-//           action,
-//         );
-//         return nextState;
-//       },
-//       {},  // start with empty object
-//     );
-//   };
-// };
-
-
 // Action Creators
 let nextTodoId = 0;
-const addTodo = (text) => ({
+const addTodo = (text) => {
+  nextTodoId += 1;
+  return {
     type: 'ADD_TODO',
-    id: nextTodoId++,
+    id: nextTodoId,
     text,
-  });
+  };
+};
 
-const toggleTodo = (id) => ({
-    type: 'TOGGLE_TODO',
-    id,
-  });
+const toggleTodo = id => ({
+  type: 'TOGGLE_TODO',
+  id,
+});
 
-const setVisibilityFilter = (filter) => ({
-    type: 'SET_VISIBILITY_FILTER',
-    filter,
-  });
+const setVisibilityFilter = filter => ({
+  type: 'SET_VISIBILITY_FILTER',
+  filter,
+});
 
 const todoApp = combineReducers({
   todos,
   visibilityFilter,
 });
+
 export const store = createStore(todoApp);
 
 const Link = ({
@@ -115,35 +87,37 @@ const Link = ({
   if (active) {
     return <span>{children}</span>;
   }
+
   return (
-    <a
-href="#"
-      onClick={(e) => {
-        e.preventDefault();
-        onClick();
-      }}
+    <button
+      onClick={onClick}
     >
       {children}
-    </a>
+    </button>
   );
+};
+
+Link.propTypes = {
+  active: PropTypes.bool.isRequired,
+  children: PropTypes.ReactDOM.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 const mapStateToLinkProps = (
   state,
   ownProps,
 ) => ({
-    active: 
-      ownProps.filter === state.visibilityFilter
-  });
+  active: ownProps.filter === state.visibilityFilter,
+});
 
 const mapDispatchToLinkProps = (
   dispatch,
   ownProps,
 ) => ({
-    onClick: () => {
-      dispatch(setVisibilityFilter(ownProps.filter));
-    }
-  });
+  onClick: () => {
+    dispatch(setVisibilityFilter(ownProps.filter));
+  },
+});
 
 const FilterLink = connect(
   mapStateToLinkProps,
@@ -151,29 +125,28 @@ const FilterLink = connect(
 )(Link);
 
 const getVisibleTodos = (
-  todos,
+  todosList,
   filter,
 ) => {
   switch (filter) {
   case 'SHOW_ALL':
-    return todos;
+    return todosList;
   case 'SHOW_COMPLETED':
-    return todos.filter(t => t.completed);
+    return todosList.filter(t => t.completed);
   case 'SHOW_ACTIVE':
-    return todos.filter(t => !t.completed);
+    return todosList.filter(t => !t.completed);
   default:
-    return todos;
+    return todosList;
   }
 };
 
-// make this a presentational component.  It doesn't specify behavior, and
-// simply takes props.
 const Todo = ({
   onClick,
   completed,
   text,
 }) => (
   <li
+    { /* eslint-disable-next-line click-events-have-key-events */ }
     onClick={onClick}
     style={{
       textDecoration:
