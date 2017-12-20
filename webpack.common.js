@@ -48,7 +48,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|ttf|woff|woff2|eot|svg)$/,
         loader: 'file-loader',
         options: {
           outputPath: 'dist/assets',
