@@ -1,8 +1,11 @@
+// Initial State
+export const INITIAL_STATE = 'SHOW_ALL';
+
 // Actions
 export const SET = 'SET_VISIBILITY_FILTER';
 
 // Reducer
-export default (state = 'SHOW_ALL', action) => {
+export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case SET:
     return action.filter;

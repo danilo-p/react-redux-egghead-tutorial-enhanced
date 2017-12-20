@@ -3,6 +3,9 @@ import todo, {
   addTodo, toggleTodo,
 } from './todo';
 
+// Initial State
+export const INITIAL_STATE = [];
+
 // Actions
 export {
   ADD, TOGGLE,
@@ -11,7 +14,7 @@ export {
 
 // Reducer
 export default (
-  state = [],
+  state = INITIAL_STATE,
   action,
 ) => {
   switch (action.type) {

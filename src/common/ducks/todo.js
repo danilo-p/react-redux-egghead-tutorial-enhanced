@@ -1,9 +1,12 @@
+// Initial State
+export const INITIAL_STATE = {};
+
 // Actions
 export const ADD = 'ADD_TODO';
 export const TOGGLE = 'TOGGLE_TODO';
 
 // Reducer
-export default (state = {}, action) => {
+export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case ADD:
     return {
@@ -25,12 +28,10 @@ export default (state = {}, action) => {
 };
 
 // Action Creators
-let nextTodoId = 0;
-export function addTodo(text) {
-  nextTodoId += 1;
+export function addTodo(text, id = Symbol(text)) {
   return {
     type: ADD,
-    id: nextTodoId,
+    id,
     text,
   };
 }

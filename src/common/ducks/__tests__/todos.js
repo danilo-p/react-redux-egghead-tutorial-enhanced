@@ -1,44 +1,37 @@
 import todos, {
+  INITIAL_STATE,
   addTodo, toggleTodo,
 } from '../todos';
 
 describe('todos duck', () => {
   describe('reducer', () => {
+    const text = 'Lorem ipsum';
+    const id = Symbol(text);
+    const state = [{
+      id,
+      text,
+      completed: false,
+    }];
+
     it('should return the initial state', () => {
       expect(todos(undefined, {}))
-        .toEqual([]);
+        .toEqual(INITIAL_STATE);
     });
 
     it('should return the current/initial state if the action type is invalid', () => {
-      const currentAndInitialState = [];
       expect(todos(undefined, { type: 'ANY_ACTION_TYPE' }))
-        .toEqual(currentAndInitialState);
-      expect(todos(currentAndInitialState, { type: 'ANY_ACTION_TYPE' }))
-        .toEqual(currentAndInitialState);
+        .toEqual(INITIAL_STATE);
+      expect(todos(INITIAL_STATE, { type: 'ANY_ACTION_TYPE' }))
+        .toEqual(INITIAL_STATE);
     });
 
-    const text = 'Lorem Ipsum';
     it('should handle ADD_TODO', () => {
-      expect(todos([], addTodo(text)))
-        .toEqual([
-          {
-            id: 1,
-            text,
-            completed: false,
-          },
-        ]);
+      expect(todos(undefined, addTodo(text, id)))
+        .toEqual(state);
     });
 
     it('should handle TOGGLE_TODO', () => {
-      const id = 1;
-      const state = [
-        {
-          id: 1,
-          text,
-          completed: false,
-        },
-      ];
-      expect(todos(state, toggleTodo(1)))
+      expect(todos(state, toggleTodo(id)))
         .toEqual([
           {
             id,
