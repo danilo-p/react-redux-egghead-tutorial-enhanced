@@ -1,11 +1,13 @@
 import todo, {
-  ADD,
-  TOGGLE,
+  ADD, TOGGLE,
+  addTodo, toggleTodo,
 } from './todo';
 
 // Actions
-export const REMOVE = 'REMOVE_TODO';
-export { ADD, TOGGLE };
+export {
+  ADD, TOGGLE,
+  addTodo, toggleTodo,
+};
 
 // Reducer
 export default (
@@ -20,8 +22,6 @@ export default (
     ];
   case TOGGLE:
     return state.map(t => todo(t, action));
-  case REMOVE:
-    return []; // TODO: implement the remove todo
   default:
     return state;
   }
