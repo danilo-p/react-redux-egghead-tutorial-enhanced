@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Checkbox } from 'semantic-ui-react';
+
+import styles from './index.styl';
 
 const Todo = ({
   onClick,
   completed,
   text,
 }) => (
-  <li
-    style={{
-      textDecoration:
-        completed ?
-          'line-through' :
-          'none',
-    }}
-  >
-    <input type="checkbox" onClick={onClick} />
-    {text}
+  <li>
+    <Checkbox
+      className={styles.Todo__Checkbox}
+      onClick={onClick}
+      label={{ children: text }}
+      checked={completed}
+    />
   </li>
 );
 

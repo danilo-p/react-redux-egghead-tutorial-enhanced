@@ -1,25 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Button } from 'semantic-ui-react';
 import { setVisibilityFilter } from '../ducks/visibilityFilter';
 
 const Link = ({
   active,
   children,
   onClick,
-}) => {
-  if (active) {
-    return <span>{children}</span>;
-  }
-
-  return (
-    <button
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  );
-};
+}) => (
+  <Button
+    secondary
+    disabled={active}
+    size="mini"
+    onClick={onClick}
+  >
+    {children}
+  </Button>
+);
 
 Link.propTypes = {
   active: PropTypes.bool.isRequired,

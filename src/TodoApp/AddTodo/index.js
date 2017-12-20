@@ -22,10 +22,13 @@ class AddTodo extends React.Component {
   }
 
   onButtonClick() {
-    this.props.dispatch(addTodo(this.state.inputText));
-    this.setState({
-      inputText: '',
-    });
+    const { inputText } = this.state;
+    if (inputText) {
+      this.props.dispatch(addTodo(inputText));
+      this.setState({
+        inputText: '',
+      });
+    }
   }
 
   render() {
