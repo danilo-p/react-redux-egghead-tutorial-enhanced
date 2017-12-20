@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { toggleTodo } from 'common/ducks/todo';
 import Todo from './Todo/index';
-import { toggleTodo } from '../ducks/todo';
 
 const getVisibleTodos = (
   todosList,

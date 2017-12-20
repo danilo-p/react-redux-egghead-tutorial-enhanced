@@ -7,7 +7,7 @@ import 'semantic-ui-css/semantic.min.css';
 import 'typeface-roboto/index.css';
 
 import TodoApp from './TodoApp';
-import rootReducer from './TodoApp/ducks/index';
+import rootReducer from './common/ducks/index';
 
 ReactDOM.render(
   <Provider store={createStore(rootReducer)}>

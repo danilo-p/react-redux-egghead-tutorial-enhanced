@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Input, Button } from 'semantic-ui-react';
-import { addTodo } from '../ducks/todo';
+import { addTodo } from 'common/ducks/todo';
 import styles from './index.styl';
 
 class AddTodo extends React.Component {
