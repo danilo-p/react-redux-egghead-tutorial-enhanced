@@ -10,12 +10,11 @@ const getVisibleTodos = (
   filter,
 ) => {
   switch (filter) {
-  case 'SHOW_ALL':
-    return todosList;
   case 'SHOW_COMPLETED':
     return todosList.filter(t => t.completed);
   case 'SHOW_ACTIVE':
     return todosList.filter(t => !t.completed);
+  case 'SHOW_ALL':
   default:
     return todosList;
   }
@@ -37,11 +36,7 @@ const TodoList = ({
 );
 
 TodoList.propTypes = {
-  todosList: PropTypes.arrayOf({
-    id: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
-    completed: PropTypes.bool.isRequired,
-  }).isRequired,
+  todosList: PropTypes.arrayOf(PropTypes.object).isRequired,
   onTodoClick: PropTypes.func.isRequired,
 };
 

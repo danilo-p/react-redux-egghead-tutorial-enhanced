@@ -15,9 +15,10 @@ export default (state = {}, action) => {
     if (state.id !== action.id) {
       return state;
     }
-    return Object.apply({}, {
+    return {
+      ...state,
       completed: !state.completed,
-    }, state);
+    };
   default:
     return state;
   }
