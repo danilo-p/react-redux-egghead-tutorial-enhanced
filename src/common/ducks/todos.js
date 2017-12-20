@@ -9,23 +9,7 @@ export { ADD, TOGGLE };
 
 // Reducer
 export default (
-  state = [
-    {
-      id: 0,
-      text: 'test0',
-      completed: false,
-    },
-    {
-      id: 1,
-      text: 'test1',
-      completed: false,
-    },
-    {
-      id: 2,
-      text: 'test2',
-      completed: false,
-    },
-  ],
+  state = [],
   action,
 ) => {
   switch (action.type) {

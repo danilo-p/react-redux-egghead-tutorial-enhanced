@@ -35,6 +35,7 @@ class AddTodo extends React.Component {
     return (
       <div className="AddTodo">
         <Input
+          action
           placeholder="Remind to feed the..."
           className={styles.AddTodo__Input}
           value={this.state.inputText}
@@ -44,14 +45,16 @@ class AddTodo extends React.Component {
               this.onButtonClick();
             }
           }}
-        />
-        <Button
-          primary
-          onClick={this.onButtonClick}
-          className="AddTodo__Button"
         >
-          Add Todo
-        </Button>
+          <input />
+          <Button
+            primary
+            onClick={this.onButtonClick}
+            className="AddTodo__Button"
+          >
+            Add Todo
+          </Button>
+        </Input>
       </div>
     );
   }

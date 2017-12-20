@@ -25,7 +25,7 @@ export default (state = {}, action) => {
 };
 
 // Action Creators
-let nextTodoId = 2;
+let nextTodoId = 0;
 export function addTodo(text) {
   nextTodoId += 1;
   return {
