@@ -1,12 +1,14 @@
 import todos, {
   INITIAL_STATE,
-  addTodo, toggleTodo,
+  addTodo,
+  toggleTodo,
+  createTodoId,
 } from '../todos';
 
 describe('todos duck', () => {
   describe('reducer', () => {
     const text = 'Lorem ipsum';
-    const id = Symbol(text);
+    const id = createTodoId(text);
     const state = [{
       id,
       text,

@@ -4,11 +4,12 @@ import todo, {
   TOGGLE,
   addTodo,
   toggleTodo,
+  createTodoId,
 } from '../todo';
 
 describe('todo duck', () => {
   const text = 'Lorem ipsum';
-  const id = Symbol(text);
+  const id = createTodoId(text);
   const state = {
     id,
     text,

@@ -1,6 +1,9 @@
 import todo, {
-  ADD, TOGGLE,
-  addTodo, toggleTodo,
+  ADD,
+  TOGGLE,
+  addTodo,
+  toggleTodo,
+  createTodoId,
 } from './todo';
 
 // Initial State
@@ -8,8 +11,11 @@ export const INITIAL_STATE = [];
 
 // Actions
 export {
-  ADD, TOGGLE,
-  addTodo, toggleTodo,
+  ADD,
+  TOGGLE,
+  addTodo,
+  toggleTodo,
+  createTodoId,
 };
 
 // Reducer

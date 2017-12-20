@@ -27,8 +27,10 @@ export default (state = INITIAL_STATE, action) => {
   }
 };
 
+export const createTodoId = text => Date.now() + text;
+
 // Action Creators
-export function addTodo(text, id = Symbol(text)) {
+export function addTodo(text, id = createTodoId(text)) {
   return {
     type: ADD,
     id,
