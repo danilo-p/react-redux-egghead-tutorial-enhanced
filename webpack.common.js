@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const JsDocPlugin = require('jsdoc-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -76,6 +77,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.pug',
     }),
+    new JsDocPlugin(),
   ],
   node: {
     fs: 'empty',
