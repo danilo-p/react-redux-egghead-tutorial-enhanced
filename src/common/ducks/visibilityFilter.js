@@ -1,5 +1,5 @@
 /**
- * The "visibilityFilter" duck
+ * The "visibilityFilter" duck.
  *
  * @module common/ducks/visibilityFilter
  */

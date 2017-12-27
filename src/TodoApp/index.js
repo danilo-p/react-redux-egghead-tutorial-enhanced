@@ -1,6 +1,7 @@
 /**
- * @file TodoApp component.
- * @author Danilo Pimentel
+ * The main application component module.
+ *
+ * @module TodoApp
  */
 
 import React from 'react';
