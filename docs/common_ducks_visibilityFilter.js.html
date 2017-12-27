@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: common/ducks/todos.js</title>
+    <title>JSDoc: Source: common/ducks/visibilityFilter.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: common/ducks/todos.js</h1>
+    <h1 class="page-title">Source: common/ducks/visibilityFilter.js</h1>
 
     
 
@@ -27,81 +27,47 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * The "todos" duck. This module re-exports all the action types, action
- * creators and utilities from the common/ducks/todo module.
+ * The "visibilityFilter" duck
  *
- * @module common/ducks/todos
+ * @module common/ducks/visibilityFilter
  */
 
-import todo, {
-  ADD,
-  TOGGLE,
-  addTodo,
-  toggleTodo,
-  createTodoId,
-} from './todo';
+/* ======================================
+=            Initial State              =
+====================================== */
 
-/* ===========================================
-=            Initial Duck State              =
-=========================================== */
+/** "visibilityFilter" duck initial state */
+export const INITIAL_STATE = 'SHOW_ALL';
 
-/** The "todos" duck initial state */
-export const INITIAL_STATE = [];
+/* ======  End of Initial State  ====== */
 
-/* ======  End of Initial Duck State  ====== */
 
-export {
-  /* =====================================
-  =            Action Types              =
-  ===================================== */
+/* =====================================
+=            Action Types              =
+===================================== */
 
-  ADD,
-  TOGGLE,
+/** SET_VISIBILITY_FILTER action type */
+export const SET = 'SET_VISIBILITY_FILTER';
 
-  /* ======  End of Action Types  ====== */
+/* ======  End of Action Types  ====== */
 
-  /* ========================================
-  =            Action Creators              =
-  ======================================== */
-
-  addTodo,
-  toggleTodo,
-
-  /* ======  End of Action Creators  ====== */
-
-  /* ==================================
-  =            Utilities              =
-  ================================== */
-
-  createTodoId,
-
-  /* ======  End of Utilities  ====== */
-};
 
 /* ================================
 =            Reducer              =
 ================================ */
 
 /**
- * * The "todos" duck reducer
+ * The "visibilityFilter" duck reducer
  *
- * @export
+ * @memberof module:common/ducks/visibilityFilter
  * @param {Object} [state=INITIAL_STATE] The current state
  * @param {Object} action The action to be handled
  * @returns {Object} The new state
  */
-export default function reducer(
-  state = INITIAL_STATE,
-  action,
-) {
+export default function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-  case ADD:
-    return [
-      ...state,
-      todo(undefined, action),
-    ];
-  case TOGGLE:
-    return state.map(t => todo(t, action));
+  case SET:
+    return action.filter;
   default:
     return state;
   }
@@ -109,6 +75,24 @@ export default function reducer(
 
 /* ======  End of Reducer  ====== */
 
+
+/* ========================================
+=            Action Creators              =
+======================================== */
+
+/**
+ * Creates a new SET_VISIBILITY_FILTER action.
+ *
+ * @memberof module:common/ducks/visibilityFilter
+ * @param {String} filter The visibility filter
+ * @returns {Object} The new SET_VISIBILITY_FILTER action
+ */
+export const setVisibilityFilter = filter => ({
+  type: 'SET_VISIBILITY_FILTER',
+  filter,
+});
+
+/* ======  End of Action Creators  ====== */
 </code></pre>
         </article>
     </section>

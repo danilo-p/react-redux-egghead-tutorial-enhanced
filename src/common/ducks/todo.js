@@ -17,10 +17,10 @@ export const INITIAL_STATE = {};
 =            Action Types              =
 ======================================== */
 
-/** ADD_TODO Action type */
+/** ADD_TODO action type */
 export const ADD = 'ADD_TODO';
 
-/** TOGGLE_TODO Action type */
+/** TOGGLE_TODO action type */
 export const TOGGLE = 'TOGGLE_TODO';
 
 
@@ -29,6 +29,7 @@ export const TOGGLE = 'TOGGLE_TODO';
 /* ================================
 =            Reducer              =
 ================================ */
+
 /**
  * The "todo" duck reducer
  *
