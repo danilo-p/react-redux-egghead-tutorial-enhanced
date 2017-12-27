@@ -14,7 +14,7 @@ plugins:
 settings:
   import/resolver:
     webpack:
-      config: "./webpack.dev.js"
+      config: ./webpack.dev.js
 rules:
   indent:
     - error
@@ -28,11 +28,20 @@ rules:
   semi:
     - error
     - always
-  "react/jsx-filename-extension":
+  react/jsx-filename-extension:
     - 1
     - extensions:
       - ".js"
       - ".jsx"
+  valid-jsdoc:
+    - error
+  require-jsdoc:
+    - error
+    -
+      require:
+        FunctionDeclaration: true
+        MethodDefinition: true
+        ClassDeclaration: true
 globals:
   it: true
   should: true

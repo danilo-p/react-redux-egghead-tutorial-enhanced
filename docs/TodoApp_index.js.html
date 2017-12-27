@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: index.js</title>
+    <title>JSDoc: Source: TodoApp/index.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: index.js</h1>
+    <h1 class="page-title">Source: TodoApp/index.js</h1>
 
     
 
@@ -27,27 +27,29 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @file Main file of the application. It renders the main entrypoint on the root div.
+ * @file TodoApp component.
  * @author Danilo Pimentel
  */
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import { Header, Container, Grid } from 'semantic-ui-react';
+import TodoList from './TodoList';
+import styles from './index.styl';
 
-import 'semantic-ui-css/semantic.min.css';
-import 'typeface-roboto/index.css';
-
-import TodoApp from './TodoApp';
-import rootReducer from './common/ducks/index';
-
-ReactDOM.render(
-  &lt;Provider store={createStore(rootReducer)}>
-    &lt;TodoApp />
-  &lt;/Provider>,
-  document.getElementById('root'),
+const TodoApp = () => (
+  &lt;Container>
+    &lt;Grid centered>
+      &lt;Grid.Column computer="8" tablet="8" mobile="16">
+        &lt;Header as="h1" className={styles.TodoApp__Header}>
+          A Simple Todo App
+        &lt;/Header>
+        &lt;TodoList />
+      &lt;/Grid.Column>
+    &lt;/Grid>
+  &lt;/Container>
 );
+
+export default TodoApp;
 </code></pre>
         </article>
     </section>

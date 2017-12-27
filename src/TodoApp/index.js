@@ -1,3 +1,8 @@
+/**
+ * @file TodoApp component.
+ * @author Danilo Pimentel
+ */
+
 import React from 'react';
 import { Header, Container, Grid } from 'semantic-ui-react';
 import TodoList from './TodoList';
