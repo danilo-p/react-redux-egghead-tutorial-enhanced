@@ -29,7 +29,8 @@ class AddTodo extends React.Component {
   /**
    * Handles the input change and updates the component state.
    *
-   * @param {any} event The change event containing the current value of the input.
+   * @param {any} event The change event containing the current value of the
+   * input.
    * @memberof AddTodo
    * @return {void}
    */

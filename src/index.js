@@ -1,5 +1,6 @@
 /**
- * @file Main file of the application. It renders the main entrypoint on the root div.
+ * @file Main file of the application. It renders the main entrypoint on the
+ * root div.
  * @author Danilo Pimentel
  */
 

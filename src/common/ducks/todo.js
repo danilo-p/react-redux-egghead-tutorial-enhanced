@@ -8,10 +8,7 @@
 =            Initial State              =
 ====================================== */
 
-/**
- * "todo" duck initial state
- * @export
-*/
+/** "todo" duck initial state */
 export const INITIAL_STATE = {};
 
 /* ======  End of Initial State  ====== */
@@ -20,16 +17,10 @@ export const INITIAL_STATE = {};
 =            Action Types              =
 ======================================== */
 
-/**
- * ADD_TODO Action type
- * @export
-*/
+/** ADD_TODO Action type */
 export const ADD = 'ADD_TODO';
 
-/**
- * TOGGLE_TODO Action type
- * @export
-*/
+/** TOGGLE_TODO Action type */
 export const TOGGLE = 'TOGGLE_TODO';
 
 
@@ -41,11 +32,10 @@ export const TOGGLE = 'TOGGLE_TODO';
 /**
  * The "todo" duck reducer
  *
- * @export
  * @memberof module:common/ducks/todo
- * @param {object} [state=INITIAL_STATE] The current state
- * @param {object} action The action to be processed
- * @returns {object} The new state
+ * @param {Object} [state=INITIAL_STATE] The current state
+ * @param {Object} action The action to be handled
+ * @returns {Object} The new state
  */
 export default function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
@@ -70,28 +60,32 @@ export default function reducer(state = INITIAL_STATE, action) {
 
 /* ======  End of Reducer  ====== */
 
+/* ==================================
+=            Utilities              =
+================================== */
+
+/**
+ * Creates a todo ID based on the content.
+ *
+ * @memberof module:common/ducks/todo
+ * @param {String} text The todo text
+ * @return {String} The todo id
+ */
+export const createTodoId = text => Date.now() + text;
+
+/* ======  End of Utilities  ====== */
+
 /* =========================================
 =            Action Creators               =
 ========================================= */
 
 /**
- * Creates a todo ID based on the content.
- *
- * @export
- * @memberof module:common/ducks/todo
- * @param {string} text The todo text
- * @return {string} The todo id
- */
-export const createTodoId = text => Date.now() + text;
-
-/**
  * Creates a new ADD_TODO action.
  *
- * @export
  * @memberof module:common/ducks/todo
- * @param {string} text The new todo content
- * @param {string} [id=createTodoId(text)] The new todo id
- * @returns {object} The new ADD_TODO action
+ * @param {String} text The new todo content
+ * @param {String} [id=createTodoId(text)] The new todo id
+ * @returns {Object} The new ADD_TODO action
  */
 export const addTodo = (text, id = createTodoId(text)) => ({
   type: ADD,
@@ -102,10 +96,9 @@ export const addTodo = (text, id = createTodoId(text)) => ({
 /**
  * Creates a new TOGGLE_TODO action.
  *
- * @export
  * @memberof module:common/ducks/todo
- * @param {string} id The todo ID
- * @return {object} The new TOGGLE_TODO action
+ * @param {String} id The todo ID
+ * @return {Object} The new TOGGLE_TODO action
  */
 export const toggleTodo = id => ({
   type: TOGGLE,
