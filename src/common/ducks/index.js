@@ -4,6 +4,7 @@
  * library.
  *
  * @module common/ducks
+ * @author Danilo Pimentel
  */
 
 import { combineReducers } from 'redux';

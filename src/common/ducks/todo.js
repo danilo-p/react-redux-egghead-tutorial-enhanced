@@ -2,6 +2,7 @@
  * The "todo" duck
  *
  * @module common/ducks/todo
+ * @author Danilo Pimentel
  */
 
 /* ======================================

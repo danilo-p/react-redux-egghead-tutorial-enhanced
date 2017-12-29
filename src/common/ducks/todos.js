@@ -3,6 +3,7 @@
  * creators and utilities from the common/ducks/todo module.
  *
  * @module common/ducks/todos
+ * @author Danilo Pimentel
  */
 
 import todo, {

@@ -5,6 +5,36 @@ import { connect } from 'react-redux';
 import { toggleTodo } from 'common/ducks/todos';
 import Todo from './Todo/index';
 
+/**
+ * Describes the todo list
+ *
+ * @param {any} props The component properties
+ * @param {Array} props.todosList The array containing all the todos.
+ * @param {Function} props.onTodoClick The todo click handler
+ * @returns {jsx} The component template
+ */
+const VisibleTodoList = ({
+  todosList,
+  onTodoClick,
+}) => (
+  <ul>
+    {todosList.map(t => (
+      <Todo
+        key={t.id}
+        {...t}
+        onClick={() => onTodoClick(t.id)}
+      />
+    ))}
+  </ul>
+);
+
+/**
+ * Utility for filtering an array of todos given a filter.
+ *
+ * @param {Array} todosList The todos list
+ * @param {String} filter The filter to be applied on the todosList array.
+ * @returns {jsx} The filtered array
+ */
 const getVisibleTodos = (
   todosList,
   filter,
@@ -20,22 +50,7 @@ const getVisibleTodos = (
   }
 };
 
-const TodoList = ({
-  todosList,
-  onTodoClick,
-}) => (
-  <ul>
-    {todosList.map(t => (
-      <Todo
-        key={t.id}
-        {...t}
-        onClick={() => onTodoClick(t.id)}
-      />
-    ))}
-  </ul>
-);
-
-TodoList.propTypes = {
+VisibleTodoList.propTypes = {
   todosList: PropTypes.arrayOf(PropTypes.object).isRequired,
   onTodoClick: PropTypes.func.isRequired,
 };
@@ -56,4 +71,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(TodoList);
+)(VisibleTodoList);

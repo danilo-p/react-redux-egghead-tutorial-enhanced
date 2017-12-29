@@ -1,9 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Checkbox } from 'semantic-ui-react';
-
 import styles from './index.styl';
 
+/**
+ * Describes a todo item.
+ *
+ * @param {Object} props The Todo's component properties
+ * @param {Object} props.onClick The todo's click handler
+ * @param {Object} props.completed The todo's completeness
+ * @param {Object} props.text The todo's content
+ * @returns {jsx} The Todo's component template
+ */
 const Todo = ({
   onClick,
   completed,

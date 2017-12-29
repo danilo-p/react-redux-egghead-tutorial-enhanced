@@ -2,6 +2,7 @@
  * The "visibilityFilter" duck.
  *
  * @module common/ducks/visibilityFilter
+ * @author Danilo Pimentel
  */
 
 /* ======================================

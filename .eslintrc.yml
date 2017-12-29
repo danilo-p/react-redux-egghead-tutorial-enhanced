@@ -46,6 +46,7 @@ rules:
     - error
     -
       code: 80
+      ignoreComments: true
 globals:
   it: true
   should: true

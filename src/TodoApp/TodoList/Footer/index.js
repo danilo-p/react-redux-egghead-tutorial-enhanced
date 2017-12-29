@@ -1,12 +1,16 @@
 import React from 'react';
-import FilterLink from './FilterLink';
-
+import FilterButton from './FilterButton';
+/**
+ * Describes the footer of the app.
+ *
+ * @returns {jsx} The Footer template
+ */
 const Footer = () => (
   <p>
     Show:&nbsp;&nbsp;
-    <FilterLink filter="SHOW_ALL">All</FilterLink>
-    <FilterLink filter="SHOW_ACTIVE">Active</FilterLink>
-    <FilterLink filter="SHOW_COMPLETED">Completed</FilterLink>
+    <FilterButton filter="SHOW_ALL">All</FilterButton>
+    <FilterButton filter="SHOW_ACTIVE">Active</FilterButton>
+    <FilterButton filter="SHOW_COMPLETED">Completed</FilterButton>
   </p>
 );
 

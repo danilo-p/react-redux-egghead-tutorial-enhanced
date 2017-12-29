@@ -10,7 +10,6 @@ import styles from './index.styl';
  *
  * @class AddTodo
  * @extends {React.Component}
- *
 */
 class AddTodo extends React.Component {
   /**

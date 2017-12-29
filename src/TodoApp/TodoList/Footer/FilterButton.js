@@ -4,7 +4,16 @@ import { connect } from 'react-redux';
 import { Button } from 'semantic-ui-react';
 import { setVisibilityFilter } from 'common/ducks/visibilityFilter';
 
-const Link = ({
+/**
+ * Describes a button that is used to filter the todos on the app.
+ *
+ * @param {Object} props The component properties
+ * @param {Boolean} props.active Is the filter that the button describes active?
+ * @param {Array} props.children The button children components
+ * @param {Function} props.onClick Button click handler
+ * @returns {jsx} The button template
+ */
+const FilterButton = ({
   active,
   children,
   onClick,
@@ -19,7 +28,7 @@ const Link = ({
   </Button>
 );
 
-Link.propTypes = {
+FilterButton.propTypes = {
   active: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
@@ -27,21 +36,24 @@ Link.propTypes = {
 
 const mapStateToProps = (
   state,
-  ownProps,
+  containerProps,
 ) => ({
-  active: ownProps.filter === state.visibilityFilter,
+  active: containerProps.filter === state.visibilityFilter,
 });
 
 const mapDispatchToProps = (
   dispatch,
-  ownProps,
+  containerProps,
 ) => ({
   onClick: () => {
-    dispatch(setVisibilityFilter(ownProps.filter));
+    dispatch(setVisibilityFilter(containerProps.filter));
   },
 });
 
+/**
+ * Exports the container component for the FilterButton
+ */
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Link);
+)(FilterButton);
