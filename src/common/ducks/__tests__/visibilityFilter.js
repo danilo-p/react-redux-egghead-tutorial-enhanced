@@ -13,12 +13,15 @@ describe('visibilityFilter duck', () => {
         .toEqual(INITIAL_STATE);
     });
 
-    it('should return the current/initial state if the action type is invalid', () => {
-      expect(visibilityFilter(undefined, { type: 'ANY_ACTION_TYPE' }))
-        .toEqual(INITIAL_STATE);
-      expect(visibilityFilter(INITIAL_STATE, { type: 'ANY_ACTION_TYPE' }))
-        .toEqual(INITIAL_STATE);
-    });
+    it(
+      'should return the current/initial state if the action type is invalid',
+      () => {
+        expect(visibilityFilter(undefined, { type: 'ANY_ACTION_TYPE' }))
+          .toEqual(INITIAL_STATE);
+        expect(visibilityFilter(INITIAL_STATE, { type: 'ANY_ACTION_TYPE' }))
+          .toEqual(INITIAL_STATE);
+      },
+    );
 
     it('should handle the SET_VISIBILITY_FILTER action', () => {
       expect(visibilityFilter(undefined, setVisibilityFilter(filter)))

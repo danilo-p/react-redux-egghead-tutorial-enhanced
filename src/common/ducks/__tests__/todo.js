@@ -22,12 +22,15 @@ describe('todo duck', () => {
         .toEqual(INITIAL_STATE);
     });
 
-    it('should return the current/initial state if the action type is invalid', () => {
-      expect(todo(undefined, { type: 'ANY_ACTION_TYPE' }))
-        .toEqual(INITIAL_STATE);
-      expect(todo(INITIAL_STATE, { type: 'ANY_ACTION_TYPE' }))
-        .toEqual(INITIAL_STATE);
-    });
+    it(
+      'should return the current/initial state if the action type is invalid',
+      () => {
+        expect(todo(undefined, { type: 'ANY_ACTION_TYPE' }))
+          .toEqual(INITIAL_STATE);
+        expect(todo(INITIAL_STATE, { type: 'ANY_ACTION_TYPE' }))
+          .toEqual(INITIAL_STATE);
+      },
+    );
 
     it('should handle the ADD_TODO action', () => {
       expect(todo(undefined, addTodo(text, id)))

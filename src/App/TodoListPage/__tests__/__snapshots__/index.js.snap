@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoListPage should render the component 1`] = `
+<Container>
+  <Grid
+    centered={true}
+  >
+    <GridColumn
+      computer="8"
+      mobile="16"
+      tablet="8"
+    >
+      <Header
+        as="h1"
+        className="TodoListPage__Header"
+      >
+        A Simple Todo App
+      </Header>
+      <TodoList />
+    </GridColumn>
+  </Grid>
+</Container>
+`;

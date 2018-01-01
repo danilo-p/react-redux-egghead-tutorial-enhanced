@@ -53,3 +53,6 @@ globals:
   jest: true
   describe: true
   expect: true
+  shallow: true
+  render: true
+  mount: true
