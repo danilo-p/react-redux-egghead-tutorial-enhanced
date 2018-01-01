@@ -56,3 +56,5 @@ globals:
   shallow: true
   render: true
   mount: true
+  beforeEach: true
+  afterEach: true

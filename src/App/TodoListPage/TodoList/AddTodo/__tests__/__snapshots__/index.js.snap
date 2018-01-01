@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddTodo should render the component 1`] = `
+exports[`AddTodo should shallow render the component 1`] = `
 <AddTodo
   dispatch={[Function]}
   store={
