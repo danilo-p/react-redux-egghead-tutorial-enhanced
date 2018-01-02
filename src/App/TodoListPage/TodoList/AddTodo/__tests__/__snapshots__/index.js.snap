@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AddTodo should shallow render the component 1`] = `
-<AddTodo
-  dispatch={[Function]}
+<Connect(AddTodo)
   store={
     Object {
       "clearActions": [Function],
@@ -13,5 +12,73 @@ exports[`AddTodo should shallow render the component 1`] = `
       "subscribe": [Function],
     }
   }
-/>
+>
+  <AddTodo
+    dispatch={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  >
+    <div
+      className="AddTodo"
+    >
+      <Input
+        action={
+          <Button
+            as="button"
+            className="AddTodo__Button"
+            onClick={[Function]}
+            primary={true}
+          >
+            Add Todo
+          </Button>
+        }
+        className="AddTodo__Input"
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        placeholder="Remind to feed the..."
+        type="text"
+        value=""
+      >
+        <div
+          className="ui action input AddTodo__Input"
+        >
+          <input
+            disabled={undefined}
+            key="text"
+            onChange={[Function]}
+            onKeyPress={[Function]}
+            placeholder="Remind to feed the..."
+            tabIndex={undefined}
+            type="text"
+            value=""
+          />
+          <Button
+            as="button"
+            className="AddTodo__Button"
+            onClick={[Function]}
+            primary={true}
+          >
+            <button
+              className="ui primary button AddTodo__Button"
+              disabled={undefined}
+              onClick={[Function]}
+              role="button"
+              tabIndex={undefined}
+            >
+              Add Todo
+            </button>
+          </Button>
+        </div>
+      </Input>
+    </div>
+  </AddTodo>
+</Connect(AddTodo)>
 `;
