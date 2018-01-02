@@ -43,8 +43,7 @@ describe('AddTodo', () => {
     it('should update the input value', () => {
       const value = 'Lorem ipsum dolor';
       changeInputValue(value);
-      // Wait for state update and then check if the value was changed
-      setTimeout(() => {
+      setTimeout(() => { // Wait for state update
         expect(addTodo.state().inputText).toBe(value);
       }, 1000);
     });
@@ -62,7 +61,7 @@ describe('AddTodo', () => {
         describe('and the input is empty', () => {
           it('should not dispatch any action', () => {
             hitEnterKey();
-            setTimeout(() => {
+            setTimeout(() => { // Wait for state update
               expect(store.getActions().length).toBe(0);
             }, 1000);
           });
@@ -75,8 +74,7 @@ describe('AddTodo', () => {
           });
 
           it('should dispatch a new ADD_TODO action', () => {
-            // Wait for state update
-            setTimeout(() => {
+            setTimeout(() => { // Wait for state update
               const actions = store.getActions();
               expect(actions.length).toBe(1);
 
@@ -87,8 +85,7 @@ describe('AddTodo', () => {
           });
 
           it('should clear the state value', () => {
-            // Wait for state update
-            setTimeout(() => {
+            setTimeout(() => { // Wait for state update
               expect(addTodo.state().inputText).toBe('');
             }, 1000);
           });
@@ -105,7 +102,7 @@ describe('AddTodo', () => {
         describe('and the input is empty', () => {
           it('should not dispatch any action', () => {
             clickAddTodoButton();
-            setTimeout(() => {
+            setTimeout(() => { // Wait for state update
               expect(store.getActions().length).toBe(0);
             }, 1000);
           });
@@ -118,8 +115,7 @@ describe('AddTodo', () => {
           });
 
           it('should dispatch a new ADD_TODO action', () => {
-            // Wait for state update
-            setTimeout(() => {
+            setTimeout(() => { // Wait for state update
               const actions = store.getActions();
               expect(actions.length).toBe(1);
 
@@ -130,8 +126,7 @@ describe('AddTodo', () => {
           });
 
           it('should clear the state value', () => {
-            // Wait for state update
-            setTimeout(() => {
+            setTimeout(() => { // Wait for state update
               expect(addTodo.state().inputText).toBe('');
             }, 1000);
           });
