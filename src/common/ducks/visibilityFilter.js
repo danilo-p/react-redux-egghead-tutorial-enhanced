@@ -61,7 +61,7 @@ export default function reducer(state = INITIAL_STATE, action) {
  * @returns {Object} The new SET_VISIBILITY_FILTER action
  */
 export const setVisibilityFilter = filter => ({
-  type: 'SET_VISIBILITY_FILTER',
+  type: SET,
   filter,
 });
 

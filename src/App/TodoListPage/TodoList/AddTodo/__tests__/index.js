@@ -38,7 +38,6 @@ describe('AddTodo', () => {
       const input = addTodo.find(Input).first();
       const eventMock = { target: { value } };
       input.find('input').first().simulate('change', eventMock);
-      addTodo.update();
     };
     it('should update the input value', () => {
       const value = 'Lorem ipsum dolor';
@@ -55,7 +54,6 @@ describe('AddTodo', () => {
           const input = addTodo.find(Input).first();
           const eventMock = { key: 'Enter' };
           input.find('input').first().simulate('keyPress', eventMock);
-          addTodo.update();
         };
 
         describe('and the input is empty', () => {
@@ -96,7 +94,6 @@ describe('AddTodo', () => {
         const clickAddTodoButton = () => {
           const button = addTodo.find(Button).first();
           button.simulate('click');
-          addTodo.update();
         };
 
         describe('and the input is empty', () => {
