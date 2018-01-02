@@ -29,6 +29,10 @@ describe('FilterLink', () => {
     filterLink = mount(filterLink);
   });
 
+  it('should render the component', () => {
+    expect(filterLink).toMatchSnapshot();
+  });
+
   it('should always render one Button', () => {
     const buttons = filterLink.find(Button);
     expect(buttons.length).toBe(1);

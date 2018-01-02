@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render the component 1`] = `
+<Footer>
+  <p>
+    Show:  
+    <Connect(FilterLink)
+      filter="SHOW_ALL"
+    >
+      <FilterLink
+        active={true}
+        filter="SHOW_ALL"
+        onClick={[Function]}
+      >
+        <Button
+          as="button"
+          disabled={true}
+          onClick={[Function]}
+          secondary={true}
+          size="mini"
+        >
+          <button
+            className="ui mini secondary disabled button"
+            disabled={true}
+            onClick={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            All
+          </button>
+        </Button>
+      </FilterLink>
+    </Connect(FilterLink)>
+    <Connect(FilterLink)
+      filter="SHOW_ACTIVE"
+    >
+      <FilterLink
+        active={false}
+        filter="SHOW_ACTIVE"
+        onClick={[Function]}
+      >
+        <Button
+          as="button"
+          disabled={false}
+          onClick={[Function]}
+          secondary={true}
+          size="mini"
+        >
+          <button
+            className="ui mini secondary button"
+            disabled={undefined}
+            onClick={[Function]}
+            role="button"
+            tabIndex={undefined}
+          >
+            Active
+          </button>
+        </Button>
+      </FilterLink>
+    </Connect(FilterLink)>
+    <Connect(FilterLink)
+      filter="SHOW_COMPLETED"
+    >
+      <FilterLink
+        active={false}
+        filter="SHOW_COMPLETED"
+        onClick={[Function]}
+      >
+        <Button
+          as="button"
+          disabled={false}
+          onClick={[Function]}
+          secondary={true}
+          size="mini"
+        >
+          <button
+            className="ui mini secondary button"
+            disabled={undefined}
+            onClick={[Function]}
+            role="button"
+            tabIndex={undefined}
+          >
+            Completed
+          </button>
+        </Button>
+      </FilterLink>
+    </Connect(FilterLink)>
+  </p>
+</Footer>
+`;

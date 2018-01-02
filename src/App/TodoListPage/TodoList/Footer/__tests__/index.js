@@ -23,6 +23,10 @@ describe('Footer', () => {
     footer = mount(footer).find(Footer).first();
   });
 
+  it('should render the component', () => {
+    expect(footer).toMatchSnapshot();
+  });
+
   it('should always render one paragraph', () => {
     expect(footer.find('p').length).toBe(1);
   });

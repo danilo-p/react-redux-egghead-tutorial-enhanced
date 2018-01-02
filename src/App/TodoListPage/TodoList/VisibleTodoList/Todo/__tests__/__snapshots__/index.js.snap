@@ -1,17 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Todo should render the component 1`] = `
-<li>
-  <Checkbox
-    checked={false}
-    className="Todo__Checkbox"
-    label={
-      Object {
-        "children": "test",
+<Todo
+  completed={false}
+  onClick={[Function]}
+  text="The todo content"
+>
+  <li>
+    <Checkbox
+      checked={false}
+      className="Todo__Checkbox"
+      label={
+        Object {
+          "children": "The todo content",
+        }
       }
-    }
-    onClick={[Function]}
-    type="checkbox"
-  />
-</li>
+      onClick={[Function]}
+      type="checkbox"
+    >
+      <div
+        className="ui checkbox Todo__Checkbox"
+        onChange={[Function]}
+        onClick={[Function]}
+        onMouseDown={[Function]}
+      >
+        <input
+          checked={false}
+          className="hidden"
+          name={undefined}
+          readOnly={true}
+          tabIndex={0}
+          type="checkbox"
+          value={undefined}
+        />
+        <label
+          htmlFor={undefined}
+        >
+          The todo content
+        </label>
+      </div>
+    </Checkbox>
+  </li>
+</Todo>
 `;
