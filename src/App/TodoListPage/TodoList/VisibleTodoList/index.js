@@ -35,7 +35,7 @@ const VisibleTodoList = ({
  * @param {String} filter The filter to be applied on the todosList array.
  * @returns {jsx} The filtered array
  */
-const getVisibleTodos = (
+export const getVisibleTodos = (
   todosList,
   filter,
 ) => {
