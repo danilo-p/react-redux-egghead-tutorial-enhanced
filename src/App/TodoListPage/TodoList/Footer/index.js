@@ -16,9 +16,3 @@ const Footer = () => (
 );
 
 export default Footer;
-
-// Always render a paragraph with everything else
-// Always render 3 FilterLink's, one for each filter:
-// - 'SHOW_ALL'
-// - 'SHOW_ACTIVE'
-// - 'SHOW_COMPLETED'
