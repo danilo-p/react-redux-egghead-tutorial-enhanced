@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddTodo should shallow render the component 1`] = `
+exports[`AddTodo should render the component 1`] = `
 <Connect(AddTodo)
   store={
     Object {

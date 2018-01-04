@@ -44,6 +44,12 @@ describe('todo duck', () => {
           completed: true,
         });
     });
+
+    it('should handle the TOGGLE_TODO action returning the same state for an' +
+      ' invalid id', () => {
+      expect(todo(state, toggleTodo(createTodoId('Some other todo'))))
+        .toEqual(state);
+    });
   });
 
   describe('action creators', () => {

@@ -50,27 +50,27 @@ exports[`VisibleTodoList should render the component 1`] = `
       Array [
         Object {
           "completed": false,
-          "id": "1515028083532Todo 1",
+          "id": "1515029639025Todo 1",
           "text": "Todo 1",
         },
         Object {
           "completed": true,
-          "id": "1515028083532Todo 2",
+          "id": "1515029639025Todo 2",
           "text": "Todo 2",
         },
         Object {
           "completed": false,
-          "id": "1515028083532Todo 3",
+          "id": "1515029639025Todo 3",
           "text": "Todo 3",
         },
         Object {
           "completed": true,
-          "id": "1515028083532Todo 4",
+          "id": "1515029639025Todo 4",
           "text": "Todo 4",
         },
         Object {
           "completed": false,
-          "id": "1515028083532Todo 5",
+          "id": "1515029639025Todo 5",
           "text": "Todo 5",
         },
       ]
@@ -79,8 +79,8 @@ exports[`VisibleTodoList should render the component 1`] = `
     <ul>
       <Todo
         completed={false}
-        id="1515028083532Todo 1"
-        key="1515028083532Todo 1"
+        id="1515029639025Todo 1"
+        key="1515029639025Todo 1"
         onClick={[Function]}
         text="Todo 1"
       >
@@ -122,8 +122,8 @@ exports[`VisibleTodoList should render the component 1`] = `
       </Todo>
       <Todo
         completed={true}
-        id="1515028083532Todo 2"
-        key="1515028083532Todo 2"
+        id="1515029639025Todo 2"
+        key="1515029639025Todo 2"
         onClick={[Function]}
         text="Todo 2"
       >
@@ -165,8 +165,8 @@ exports[`VisibleTodoList should render the component 1`] = `
       </Todo>
       <Todo
         completed={false}
-        id="1515028083532Todo 3"
-        key="1515028083532Todo 3"
+        id="1515029639025Todo 3"
+        key="1515029639025Todo 3"
         onClick={[Function]}
         text="Todo 3"
       >
@@ -208,8 +208,8 @@ exports[`VisibleTodoList should render the component 1`] = `
       </Todo>
       <Todo
         completed={true}
-        id="1515028083532Todo 4"
-        key="1515028083532Todo 4"
+        id="1515029639025Todo 4"
+        key="1515029639025Todo 4"
         onClick={[Function]}
         text="Todo 4"
       >
@@ -251,8 +251,8 @@ exports[`VisibleTodoList should render the component 1`] = `
       </Todo>
       <Todo
         completed={false}
-        id="1515028083532Todo 5"
-        key="1515028083532Todo 5"
+        id="1515029639025Todo 5"
+        key="1515029639025Todo 5"
         onClick={[Function]}
         text="Todo 5"
       >

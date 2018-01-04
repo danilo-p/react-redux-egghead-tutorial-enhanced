@@ -9,11 +9,6 @@ import VisibleTodoList, {
 import Todo from '../Todo';
 
 const mockStore = configureMockStore();
-// VisibleTodoList contract
-// [ ] receive the "todosList" property
-// [ ] receive the "onTodoClick" property
-// [x] always renders one ul
-// [x] always renders one "Todo" component for each item in the "todosList" property
 
 describe('VisibleTodoList', () => {
   let visibleTodoList = null;
@@ -50,6 +45,28 @@ describe('VisibleTodoList', () => {
     expect(visibleTodoList.find(Todo).length)
       .toBe(store.getState().todos.length);
   });
+
+  it(
+    'should dispatch an TOGGLE_TODO action on a Todo click with the todo id',
+    () => {
+      const todoId = todosList[0].id;
+
+      const todo = visibleTodoList
+        .findWhere(node => node.props().id === todoId)
+        .first();
+
+      todo.simulate('click');
+
+      const actions = store.getActions();
+
+      expect(actions.length).toBe(1);
+
+      const action = actions[0];
+
+      expect(action.type).toBe(TOGGLE);
+      expect(action.id).toBe(todoId);
+    },
+  );
 
   describe('getVisibleTodos', () => {
     it(

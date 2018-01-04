@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1515028086632" clover="3.2.0">
-  <project timestamp="1515028086632" name="All files">
-    <metrics statements="73" coveredstatements="65" conditionals="26" coveredconditionals="20" methods="32" coveredmethods="30" elements="131" coveredelements="115" complexity="0" loc="73" ncloc="73" packages="9" files="13" classes="13">
+<coverage generated="1515029678269" clover="3.2.0">
+  <project timestamp="1515029678269" name="All files">
+    <metrics statements="73" coveredstatements="66" conditionals="26" coveredconditionals="22" methods="32" coveredmethods="30" elements="131" coveredelements="118" complexity="0" loc="73" ncloc="73" packages="9" files="13" classes="13">
       <package name="src">
         <metrics statements="6" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <file name="index.js" path="/home/danilo/Desktop/github/react-redux-egghead-tutorial-enhanced/src/index.js">
@@ -37,20 +37,20 @@
         </file>
       </package>
       <package name="src.App.TodoListPage.TodoList.AddTodo">
-        <metrics statements="13" coveredstatements="13" conditionals="4" coveredconditionals="3" methods="5" coveredmethods="5"/>
+        <metrics statements="13" coveredstatements="13" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
         <file name="index.js" path="/home/danilo/Desktop/github/react-redux-egghead-tutorial-enhanced/src/App/TodoListPage/TodoList/AddTodo/index.js">
-          <metrics statements="13" coveredstatements="13" conditionals="4" coveredconditionals="3" methods="5" coveredmethods="5"/>
-          <line num="20" count="12" type="stmt"/>
-          <line num="21" count="12" type="stmt"/>
-          <line num="24" count="12" type="stmt"/>
-          <line num="25" count="12" type="stmt"/>
+          <metrics statements="13" coveredstatements="13" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
+          <line num="20" count="13" type="stmt"/>
+          <line num="21" count="13" type="stmt"/>
+          <line num="24" count="13" type="stmt"/>
+          <line num="25" count="13" type="stmt"/>
           <line num="37" count="5" type="stmt"/>
           <line num="48" count="6" type="stmt"/>
           <line num="49" count="6" type="cond" truecount="2" falsecount="0"/>
           <line num="50" count="4" type="stmt"/>
           <line num="51" count="4" type="stmt"/>
-          <line num="63" count="21" type="stmt"/>
-          <line num="80" count="3" type="cond" truecount="1" falsecount="1"/>
+          <line num="63" count="22" type="stmt"/>
+          <line num="80" count="4" type="cond" truecount="2" falsecount="0"/>
           <line num="81" count="3" type="stmt"/>
           <line num="90" count="5" type="stmt"/>
         </file>
@@ -79,17 +79,17 @@
         <file name="index.js" path="/home/danilo/Desktop/github/react-redux-egghead-tutorial-enhanced/src/App/TodoListPage/TodoList/VisibleTodoList/index.js">
           <metrics statements="13" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="9" coveredmethods="8"/>
           <line num="16" count="5" type="stmt"/>
-          <line num="20" count="8" type="stmt"/>
-          <line num="22" count="35" type="stmt"/>
+          <line num="20" count="9" type="stmt"/>
+          <line num="22" count="40" type="stmt"/>
           <line num="25" count="0" type="stmt"/>
           <line num="38" count="5" type="stmt"/>
-          <line num="42" count="12" type="cond" truecount="4" falsecount="0"/>
+          <line num="42" count="13" type="cond" truecount="4" falsecount="0"/>
           <line num="44" count="5" type="stmt"/>
           <line num="46" count="5" type="stmt"/>
-          <line num="49" count="10" type="stmt"/>
+          <line num="49" count="11" type="stmt"/>
           <line num="53" count="5" type="stmt"/>
-          <line num="58" count="8" type="stmt"/>
-          <line num="65" count="9" type="stmt"/>
+          <line num="58" count="9" type="stmt"/>
+          <line num="65" count="10" type="stmt"/>
           <line num="66" count="1" type="stmt"/>
         </file>
       </package>
@@ -98,28 +98,28 @@
         <file name="index.js" path="/home/danilo/Desktop/github/react-redux-egghead-tutorial-enhanced/src/App/TodoListPage/TodoList/VisibleTodoList/Todo/index.js">
           <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="15" count="6" type="stmt"/>
-          <line num="20" count="39" type="stmt"/>
+          <line num="20" count="44" type="stmt"/>
           <line num="30" count="6" type="stmt"/>
         </file>
       </package>
       <package name="src.common.ducks">
-        <metrics statements="24" coveredstatements="23" conditionals="14" coveredconditionals="13" methods="8" coveredmethods="8"/>
+        <metrics statements="24" coveredstatements="24" conditionals="14" coveredconditionals="14" methods="8" coveredmethods="8"/>
         <file name="index.js" path="/home/danilo/Desktop/github/react-redux-egghead-tutorial-enhanced/src/common/ducks/index.js">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
           <line num="22" count="9" type="stmt"/>
         </file>
         <file name="todo.js" path="/home/danilo/Desktop/github/react-redux-egghead-tutorial-enhanced/src/common/ducks/todo.js">
-          <metrics statements="12" coveredstatements="11" conditionals="7" coveredconditionals="6" methods="4" coveredmethods="4"/>
+          <metrics statements="12" coveredstatements="12" conditionals="7" coveredconditionals="7" methods="4" coveredmethods="4"/>
           <line num="13" count="11" type="stmt"/>
           <line num="22" count="11" type="stmt"/>
           <line num="25" count="11" type="stmt"/>
-          <line num="43" count="29" type="cond" truecount="3" falsecount="0"/>
+          <line num="43" count="30" type="cond" truecount="3" falsecount="0"/>
           <line num="45" count="2" type="stmt"/>
-          <line num="51" count="2" type="cond" truecount="1" falsecount="1"/>
-          <line num="52" count="0" type="stmt"/>
+          <line num="51" count="3" type="cond" truecount="2" falsecount="0"/>
+          <line num="52" count="1" type="stmt"/>
           <line num="54" count="2" type="stmt"/>
           <line num="59" count="25" type="stmt"/>
-          <line num="76" count="12" type="stmt"/>
+          <line num="76" count="13" type="stmt"/>
           <line num="92" count="11" type="cond" truecount="1" falsecount="0"/>
           <line num="105" count="11" type="stmt"/>
         </file>
