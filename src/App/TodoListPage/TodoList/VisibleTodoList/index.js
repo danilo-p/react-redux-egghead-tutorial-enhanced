@@ -55,14 +55,14 @@ VisibleTodoList.propTypes = {
   onTodoClick: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   todosList: getVisibleTodos(
     state.todos,
     state.visibilityFilter,
   ),
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   onTodoClick: id => ({
     dispatch: dispatch(toggleTodo(id)),
   }),

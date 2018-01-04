@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`VisibleTodoList should render the component 1`] = `
-<VisibleTodoList
-  onTodoClick={[Function]}
+<Connect(VisibleTodoList)
   store={
     Object {
       "clearActions": [Function],
@@ -13,27 +12,287 @@ exports[`VisibleTodoList should render the component 1`] = `
       "subscribe": [Function],
     }
   }
-  storeSubscription={
-    Subscription {
-      "listeners": Object {
-        "clear": [Function],
-        "get": [Function],
-        "notify": [Function],
-        "subscribe": [Function],
-      },
-      "onStateChange": [Function],
-      "parentSub": undefined,
-      "store": Object {
+>
+  <VisibleTodoList
+    onTodoClick={[Function]}
+    store={
+      Object {
         "clearActions": [Function],
         "dispatch": [Function],
         "getActions": [Function],
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-      },
-      "unsubscribe": [Function],
+      }
     }
-  }
-  todosList={Array []}
-/>
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    todosList={
+      Array [
+        Object {
+          "completed": false,
+          "id": "1515028083532Todo 1",
+          "text": "Todo 1",
+        },
+        Object {
+          "completed": true,
+          "id": "1515028083532Todo 2",
+          "text": "Todo 2",
+        },
+        Object {
+          "completed": false,
+          "id": "1515028083532Todo 3",
+          "text": "Todo 3",
+        },
+        Object {
+          "completed": true,
+          "id": "1515028083532Todo 4",
+          "text": "Todo 4",
+        },
+        Object {
+          "completed": false,
+          "id": "1515028083532Todo 5",
+          "text": "Todo 5",
+        },
+      ]
+    }
+  >
+    <ul>
+      <Todo
+        completed={false}
+        id="1515028083532Todo 1"
+        key="1515028083532Todo 1"
+        onClick={[Function]}
+        text="Todo 1"
+      >
+        <li>
+          <Checkbox
+            checked={false}
+            className="Todo__Checkbox"
+            label={
+              Object {
+                "children": "Todo 1",
+              }
+            }
+            onClick={[Function]}
+            type="checkbox"
+          >
+            <div
+              className="ui checkbox Todo__Checkbox"
+              onChange={[Function]}
+              onClick={[Function]}
+              onMouseDown={[Function]}
+            >
+              <input
+                checked={false}
+                className="hidden"
+                name={undefined}
+                readOnly={true}
+                tabIndex={0}
+                type="checkbox"
+                value={undefined}
+              />
+              <label
+                htmlFor={undefined}
+              >
+                Todo 1
+              </label>
+            </div>
+          </Checkbox>
+        </li>
+      </Todo>
+      <Todo
+        completed={true}
+        id="1515028083532Todo 2"
+        key="1515028083532Todo 2"
+        onClick={[Function]}
+        text="Todo 2"
+      >
+        <li>
+          <Checkbox
+            checked={true}
+            className="Todo__Checkbox"
+            label={
+              Object {
+                "children": "Todo 2",
+              }
+            }
+            onClick={[Function]}
+            type="checkbox"
+          >
+            <div
+              className="ui checked checkbox Todo__Checkbox"
+              onChange={[Function]}
+              onClick={[Function]}
+              onMouseDown={[Function]}
+            >
+              <input
+                checked={true}
+                className="hidden"
+                name={undefined}
+                readOnly={true}
+                tabIndex={0}
+                type="checkbox"
+                value={undefined}
+              />
+              <label
+                htmlFor={undefined}
+              >
+                Todo 2
+              </label>
+            </div>
+          </Checkbox>
+        </li>
+      </Todo>
+      <Todo
+        completed={false}
+        id="1515028083532Todo 3"
+        key="1515028083532Todo 3"
+        onClick={[Function]}
+        text="Todo 3"
+      >
+        <li>
+          <Checkbox
+            checked={false}
+            className="Todo__Checkbox"
+            label={
+              Object {
+                "children": "Todo 3",
+              }
+            }
+            onClick={[Function]}
+            type="checkbox"
+          >
+            <div
+              className="ui checkbox Todo__Checkbox"
+              onChange={[Function]}
+              onClick={[Function]}
+              onMouseDown={[Function]}
+            >
+              <input
+                checked={false}
+                className="hidden"
+                name={undefined}
+                readOnly={true}
+                tabIndex={0}
+                type="checkbox"
+                value={undefined}
+              />
+              <label
+                htmlFor={undefined}
+              >
+                Todo 3
+              </label>
+            </div>
+          </Checkbox>
+        </li>
+      </Todo>
+      <Todo
+        completed={true}
+        id="1515028083532Todo 4"
+        key="1515028083532Todo 4"
+        onClick={[Function]}
+        text="Todo 4"
+      >
+        <li>
+          <Checkbox
+            checked={true}
+            className="Todo__Checkbox"
+            label={
+              Object {
+                "children": "Todo 4",
+              }
+            }
+            onClick={[Function]}
+            type="checkbox"
+          >
+            <div
+              className="ui checked checkbox Todo__Checkbox"
+              onChange={[Function]}
+              onClick={[Function]}
+              onMouseDown={[Function]}
+            >
+              <input
+                checked={true}
+                className="hidden"
+                name={undefined}
+                readOnly={true}
+                tabIndex={0}
+                type="checkbox"
+                value={undefined}
+              />
+              <label
+                htmlFor={undefined}
+              >
+                Todo 4
+              </label>
+            </div>
+          </Checkbox>
+        </li>
+      </Todo>
+      <Todo
+        completed={false}
+        id="1515028083532Todo 5"
+        key="1515028083532Todo 5"
+        onClick={[Function]}
+        text="Todo 5"
+      >
+        <li>
+          <Checkbox
+            checked={false}
+            className="Todo__Checkbox"
+            label={
+              Object {
+                "children": "Todo 5",
+              }
+            }
+            onClick={[Function]}
+            type="checkbox"
+          >
+            <div
+              className="ui checkbox Todo__Checkbox"
+              onChange={[Function]}
+              onClick={[Function]}
+              onMouseDown={[Function]}
+            >
+              <input
+                checked={false}
+                className="hidden"
+                name={undefined}
+                readOnly={true}
+                tabIndex={0}
+                type="checkbox"
+                value={undefined}
+              />
+              <label
+                htmlFor={undefined}
+              >
+                Todo 5
+              </label>
+            </div>
+          </Checkbox>
+        </li>
+      </Todo>
+    </ul>
+  </VisibleTodoList>
+</Connect(VisibleTodoList)>
 `;

@@ -1,24 +1,14 @@
 import React from 'react';
-import basicComponentTests, {
-  createStoreMock,
-} from 'tests/basicComponentTests';
-import VisibleTodoList from '../';
+import { INITIAL_STATE } from 'common/ducks';
+import { createTodoId, TOGGLE } from 'common/ducks/todos';
+import configureMockStore from 'redux-mock-store';
+import VisibleTodoList, {
+  getVisibleTodos,
+  mapDispatchToProps,
+} from '../';
+import Todo from '../Todo';
 
-// getVisibleTodos contract
-// [x] should filter the todoslist based on the given filters:
-// - SHOW_COMPLETED
-// - SHOW_ACTIVE
-// - SHOW_ALL
-// [x] should return the same todoslist for any other filter
-
-// mapStateToProps contract
-// [ ] creates a "todosList" property
-// [ ] the "todosList" should be a filtered array from the "todos" array by the "visibilityFilter"
-
-// mapDispatchToProps contract
-// [ ] creates a "onTodoClick" property
-// [x] the "onTodoClick" method dispatch an TOGGLE_TODO action
-
+const mockStore = configureMockStore();
 // VisibleTodoList contract
 // [ ] receive the "todosList" property
 // [ ] receive the "onTodoClick" property
@@ -26,12 +16,93 @@ import VisibleTodoList from '../';
 // [x] always renders one "Todo" component for each item in the "todosList" property
 
 describe('VisibleTodoList', () => {
-  const component = (
-    <VisibleTodoList
-      todosList={[]}
-      onTodoClick={jest.mock()}
-      store={createStoreMock()}
-    />
-  );
-  basicComponentTests(component);
+  let visibleTodoList = null;
+  let store = null;
+  const todosList = [];
+
+  for (let i = 1; i <= 5; i += 1) {
+    const text = `Todo ${i}`;
+    todosList.push({
+      id: createTodoId(text),
+      text,
+      completed: i % 2 === 0,
+    });
+  }
+
+  beforeEach(() => {
+    store = mockStore(Object.assign(INITIAL_STATE, {
+      todos: todosList,
+      filter: 'SHOW_ALL',
+    }));
+
+    visibleTodoList = mount(<VisibleTodoList store={store} />);
+  });
+
+  it('should render the component', () => {
+    expect(visibleTodoList).toMatchSnapshot();
+  });
+
+  it('always render one "ul" element with everything else', () => {
+    expect(visibleTodoList.find('ul').length).toBeGreaterThan(0);
+  });
+
+  it('always render one "Todo" element for each todo on the state', () => {
+    expect(visibleTodoList.find(Todo).length)
+      .toBe(store.getState().todos.length);
+  });
+
+  describe('getVisibleTodos', () => {
+    it(
+      'should return only completed items for the SHOW_COMPLETED filter',
+      () => {
+        const filteredArray = getVisibleTodos(todosList, 'SHOW_COMPLETED');
+        const completedCount =
+          filteredArray.reduce((count, todo) => (
+            todo.completed
+              ? count + 1
+              : count
+          ), 0);
+        expect(completedCount).toBe(filteredArray.length);
+      },
+    );
+
+    it('should return only active items for the SHOW_ACTIVE filter', () => {
+      const filteredArray = getVisibleTodos(todosList, 'SHOW_ACTIVE');
+      const activeCount =
+          filteredArray.reduce((count, todo) => (
+            !todo.completed
+              ? count + 1
+              : count
+          ), 0);
+      expect(activeCount).toBe(filteredArray.length);
+    });
+
+    it('should return all items for the SHOW_ALL and any other filter', () => {
+      let filteredArray = [];
+
+      filteredArray = getVisibleTodos(todosList, 'SHOW_ALL');
+      expect(filteredArray.length).toBe(todosList.length);
+
+      filteredArray = getVisibleTodos(todosList, 'ANY_OTHER_FILTER');
+      expect(filteredArray.length).toBe(todosList.length);
+    });
+  });
+
+  describe('mapDispatchToProps', () => {
+    it('should dispatch an TOGGLE_TODO action with the given id', () => {
+      const todoText = 'Todo text';
+      const todoId = createTodoId(todoText);
+
+      mapDispatchToProps(store.dispatch).onTodoClick(todoId);
+
+      const actions = store.getActions();
+
+      expect(actions.length).toBe(1);
+
+      const action = actions[0];
+
+      expect(action.type).toBe(TOGGLE);
+      expect(action.id).toBe(todoId);
+    });
+  });
 });
