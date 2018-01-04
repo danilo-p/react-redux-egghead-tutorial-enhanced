@@ -1,17 +1,223 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App should render the component 1`] = `
-<Provider
+<App
   store={
     Object {
+      "clearActions": [Function],
       "dispatch": [Function],
+      "getActions": [Function],
       "getState": [Function],
       "replaceReducer": [Function],
       "subscribe": [Function],
-      Symbol(observable): [Function],
     }
   }
 >
-  <TodoListPage />
-</Provider>
+  <Provider
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  >
+    <TodoListPage>
+      <Container>
+        <div
+          className="ui container"
+        >
+          <Grid
+            centered={true}
+          >
+            <div
+              className="ui centered grid"
+            >
+              <GridColumn
+                computer="8"
+                mobile="16"
+                tablet="8"
+              >
+                <div
+                  className="eight wide computer sixteen wide mobile eight wide tablet column"
+                >
+                  <Header
+                    as="h1"
+                    className="TodoListPage__Header"
+                  >
+                    <h1
+                      className="ui header TodoListPage__Header"
+                    >
+                      A Simple Todo App
+                    </h1>
+                  </Header>
+                  <TodoList>
+                    <div>
+                      <Connect(AddTodo)>
+                        <AddTodo
+                          dispatch={[Function]}
+                        >
+                          <div
+                            className="AddTodo"
+                          >
+                            <Input
+                              action={
+                                <Button
+                                  as="button"
+                                  className="AddTodo__Button"
+                                  onClick={[Function]}
+                                  primary={true}
+                                >
+                                  Add Todo
+                                </Button>
+                              }
+                              className="AddTodo__Input"
+                              onChange={[Function]}
+                              onKeyPress={[Function]}
+                              placeholder="Remind to feed the..."
+                              type="text"
+                              value=""
+                            >
+                              <div
+                                className="ui action input AddTodo__Input"
+                              >
+                                <input
+                                  disabled={undefined}
+                                  key="text"
+                                  onChange={[Function]}
+                                  onKeyPress={[Function]}
+                                  placeholder="Remind to feed the..."
+                                  tabIndex={undefined}
+                                  type="text"
+                                  value=""
+                                />
+                                <Button
+                                  as="button"
+                                  className="AddTodo__Button"
+                                  onClick={[Function]}
+                                  primary={true}
+                                >
+                                  <button
+                                    className="ui primary button AddTodo__Button"
+                                    disabled={undefined}
+                                    onClick={[Function]}
+                                    role="button"
+                                    tabIndex={undefined}
+                                  >
+                                    Add Todo
+                                  </button>
+                                </Button>
+                              </div>
+                            </Input>
+                          </div>
+                        </AddTodo>
+                      </Connect(AddTodo)>
+                      <Connect(VisibleTodoList)>
+                        <VisibleTodoList
+                          onTodoClick={[Function]}
+                          todosList={Array []}
+                        >
+                          <ul />
+                        </VisibleTodoList>
+                      </Connect(VisibleTodoList)>
+                      <Footer>
+                        <p>
+                          Show:  
+                          <Connect(FilterLink)
+                            filter="SHOW_ALL"
+                          >
+                            <FilterLink
+                              active={true}
+                              filter="SHOW_ALL"
+                              onClick={[Function]}
+                            >
+                              <Button
+                                as="button"
+                                disabled={true}
+                                onClick={[Function]}
+                                secondary={true}
+                                size="mini"
+                              >
+                                <button
+                                  className="ui mini secondary disabled button"
+                                  disabled={true}
+                                  onClick={[Function]}
+                                  role="button"
+                                  tabIndex={-1}
+                                >
+                                  All
+                                </button>
+                              </Button>
+                            </FilterLink>
+                          </Connect(FilterLink)>
+                          <Connect(FilterLink)
+                            filter="SHOW_ACTIVE"
+                          >
+                            <FilterLink
+                              active={false}
+                              filter="SHOW_ACTIVE"
+                              onClick={[Function]}
+                            >
+                              <Button
+                                as="button"
+                                disabled={false}
+                                onClick={[Function]}
+                                secondary={true}
+                                size="mini"
+                              >
+                                <button
+                                  className="ui mini secondary button"
+                                  disabled={undefined}
+                                  onClick={[Function]}
+                                  role="button"
+                                  tabIndex={undefined}
+                                >
+                                  Active
+                                </button>
+                              </Button>
+                            </FilterLink>
+                          </Connect(FilterLink)>
+                          <Connect(FilterLink)
+                            filter="SHOW_COMPLETED"
+                          >
+                            <FilterLink
+                              active={false}
+                              filter="SHOW_COMPLETED"
+                              onClick={[Function]}
+                            >
+                              <Button
+                                as="button"
+                                disabled={false}
+                                onClick={[Function]}
+                                secondary={true}
+                                size="mini"
+                              >
+                                <button
+                                  className="ui mini secondary button"
+                                  disabled={undefined}
+                                  onClick={[Function]}
+                                  role="button"
+                                  tabIndex={undefined}
+                                >
+                                  Completed
+                                </button>
+                              </Button>
+                            </FilterLink>
+                          </Connect(FilterLink)>
+                        </p>
+                      </Footer>
+                    </div>
+                  </TodoList>
+                </div>
+              </GridColumn>
+            </div>
+          </Grid>
+        </div>
+      </Container>
+    </TodoListPage>
+  </Provider>
+</App>
 `;

@@ -24,6 +24,8 @@ describe('VisibleTodoList', () => {
     });
   }
 
+  Object.freeze(todosList);
+
   beforeEach(() => {
     store = mockStore(Object.assign(INITIAL_STATE, {
       todos: todosList,
@@ -52,19 +54,24 @@ describe('VisibleTodoList', () => {
       const todoId = todosList[0].id;
 
       const todo = visibleTodoList
+        .find('ul')
         .findWhere(node => node.props().id === todoId)
         .first();
 
+      console.log(todo.props());
+
       todo.simulate('click');
 
-      const actions = store.getActions();
+      setTimeout(() => { // Wait for state update
+        const actions = store.getActions();
 
-      expect(actions.length).toBe(1);
+        expect(actions.length).toBe(1);
 
-      const action = actions[0];
+        const action = actions[0];
 
-      expect(action.type).toBe(TOGGLE);
-      expect(action.id).toBe(todoId);
+        expect(action.type).toBe(TOGGLE);
+        expect(action.id).toBe(todoId);
+      }, 1000);
     },
   );
 
